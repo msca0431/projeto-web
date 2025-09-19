@@ -1,27 +1,102 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste de Configuração - VS Code</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Ambiente Configurado com Sucesso! 🎉</h1>
-        <p>Se estás a ver esta mensagem, o teu Live Server está a funcionar corretamente.</p>
-        <div class="feature-list">
-            <div class="feature">HTML ✅</div>
-            <div class="feature">CSS ✅</div>
-            <div class="feature">JavaScript ✅</div>
-        </div>
-        <button onclick="alerta()">Clica aqui para testar JavaScript</button>
-    </div>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello World + Mapa ISEL</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: #111827;
+        --fg: #e5e7eb;
+        --accent: #60a5fa;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+      }
+      .wrap {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 24px;
+      }
+      .card {
+        background: linear-gradient(180deg, #111827 0%, #0b1220 100%);
+        border: 1px solid #1f2937;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+        padding: 24px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(28px, 4vw, 40px);
+        letter-spacing: 0.3px;
+      }
+      p {
+        margin: 0 0 18px;
+        color: #cbd5e1;
+      }
+      .map {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #1f2937;
+      }
+      iframe {
+        display: block;
+        width: 100%;
+        height: 480px;
+        border: 0;
+      }
+      .footer {
+        margin-top: 14px;
+        font-size: 14px;
+        color: #9ca3af;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <h1>Hello, world! 👋</h1>
+        <p>
+          Mapa do <strong>Google Maps</strong> com o <em>ISEL</em> destacado.
+        </p>
 
-    <script>
-        function alerta() {
-            alert("JavaScript está a funcionar perfeitamente!");
-        }
-    </script>
-</body>
+        <!-- Iframe embed do Google Maps com as coordenadas do ISEL -->
+        <div class="map" aria-label="Mapa com o ponto do ISEL">
+          <iframe
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=38.756584,-9.116867&z=16&output=embed"
+          >
+          </iframe>
+        </div>
+
+        <p class="footer">
+          Dica: pode
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=38.756584%2C-9.116867"
+            target="_blank"
+            rel="noopener"
+            >abrir o local exato no Google Maps</a
+          >.
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
